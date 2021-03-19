@@ -145,7 +145,10 @@
                     $country = $_POST['name'];
 
                     $search_obj->restsearch($name, $address, $genre, $country);
+                    
                 }
+
+                
 
                 ?>
                 <h4>Popular Restaurants on Gourmet</h4><br>

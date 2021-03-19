@@ -8,12 +8,17 @@ class Search extends Databases {
         $sql = "SELECT * FROM restaurans WHERE rest_name LIKE '%".$name."%' OR rest_address LIKE '%".$address."%' OR rest_genre LIKE '%".$genre."%' OR rest_country LIKE '%".$country."%'";
         $result = $this->conn->query($sql);
 
-        if($result->num_rows >= 1){
+        while($result->num_rows >= 0){
             $row = $result->fetch_assoc();
             $_SESSION['search_id'] = $row['rest_id'];
-            echo $result;
-        }else{
-            echo "There is none";
+
+            $rest_name = $row['rest_name'];
+            $rest_address = $row['rest_address'];
+            $rest_image = $row['rest_image'];
+
+            echo $rest_name;
+            echo $rest_address;
+            echo $rest_image;
         }
 
     }
