@@ -9,7 +9,7 @@ class Search extends Databases {
         $result = $this->conn->query($sql);
 
         while($result->num_rows >= 0){
-            $row = $result->fetch_assoc();
+            $row = $result->fetch(PDO::FETCH_ASSOC);
             $_SESSION['search_id'] = $row['rest_id'];
 
             $rest_name = $row['rest_name'];
