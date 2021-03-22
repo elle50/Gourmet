@@ -76,8 +76,8 @@
                     <!--<li class="active"><a href="blog.html">Blog</a></li>-->
                     <li class="drop-down" class="active"><a href="">Search</a>
                         <ul>
-                            <li><a href="restaurant.html">Search Restaurantas</a></li>
-                            <li><a href="cafe.html">Serch Cafes</a></li>
+                            <li><a href="restaurant.php">Search Restaurantas</a></li>
+                            <li><a href="cafe.php">Serch Cafes</a></li>
                         </ul>
                     </li>
                     <li><a href="contact.html">Contact</a></li>

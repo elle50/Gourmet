@@ -1,3 +1,10 @@
+<?php
+
+include './classes/Search.php';
+$search_obj = new Search;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +21,7 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -78,8 +83,8 @@
                     <!--<li class="active"><a href="blog.html">Blog</a></li>-->
                     <li class="drop-down" class="active"><a href="">Search</a>
                         <ul>
-                            <li><a href="restaurant.html">Search Restaurantas</a></li>
-                            <li><a href="cafe.html">Serch Cafes</a></li>
+                            <li><a href="restaurant.php">Search Restaurantas</a></li>
+                            <li><a href="cafe.php">Serch Cafes</a></li>
                         </ul>
                     </li>
                     <li><a href="contact.html">Contact</a></li>
@@ -135,22 +140,19 @@
 
                 <?php
 
-                include './classes/Search.php';
-                $search_obj = new Search;
 
-                if(isset($_POST['search'])){
+                if (isset($_POST['search'])) {
                     $name = $_POST['name'];
                     $address = $_POST['name'];
                     $genre = $_POST['name'];
                     $country = $_POST['name'];
 
                     $search_obj->restsearch($name, $address, $genre, $country);
-                    
                 }
 
-                
-
                 ?>
+
+
                 <h4>Popular Restaurants on Gourmet</h4><br>
                 <div class="row portfolio-container" data-aos="fade-up">
 
@@ -168,7 +170,7 @@
                         <div class="portfolio-info">
                             <h4>Rouge</h4>
                             <p>377-18 Shiro, Tokyo</p>
-                        
+
                         </div>
                     </div>
 
@@ -177,7 +179,7 @@
                         <div class="portfolio-info">
                             <h4>FIESTA</h4>
                             <p>898-13 Fukakusa, Tokyo</p>
-                            
+
                         </div>
                     </div>
 
@@ -195,7 +197,7 @@
                         <div class="portfolio-info">
                             <h4>BLOOM</h4>
                             <p>386-11 Omi, Osaka</p>
-                            
+
                         </div>
                     </div>
 
@@ -204,7 +206,7 @@
                         <div class="portfolio-info">
                             <h4>cantabile</h4>
                             <p>548-5 Yoshikura, Osaka</p>
-                            
+
                         </div>
                     </div>
 
@@ -213,7 +215,7 @@
                         <div class="portfolio-info">
                             <h4>maroon</h4>
                             <p>483-14 Sone, Tokyo</p>
-                            
+
                         </div>
                     </div>
 
