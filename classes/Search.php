@@ -23,11 +23,11 @@ class Search extends Databases
                         echo "<img src=$rest_image class='img-fluid' alt=''>";
                         echo '<div class="portfolio-info">';
                             echo "<h4>$rest_name</h4>";
-                            echo '<p>' . $rest_address. '</p>';
-                            echo "
+                            echo '<p>' . $rest_address. '</p>
+                            
                         </div>
                     </div>
-                </div>";
+                </div>';
 
 
         }
