@@ -1,3 +1,10 @@
+<?php
+
+include './classes/Search.php';
+$search_obj = new Search;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,12 +128,111 @@
                         <div class="sidebar">
                             <!--<h3 class="sidebar-title">Search</h3>-->
                             <div class="sidebar-item search-form">
-                                <form action="">
-                                    <input type="text">
-                                    <button type="submit"><i class="icofont-search"></i></button>
+                                <form action="" method="POST" name="cafesearch">
+                                    <input type="text" name="name" placeholder="keyword">
+                                    <button type="submit" name="search" value="search"><i class="icofont-search"></i></button>
                                 </form>
 
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
+
+
+                if (isset($_POST['search'])) {
+                    $name = $_POST['name'];
+                    $address = $_POST['name'];
+                    $genre = $_POST['name'];
+                    $country = $_POST['name'];
+
+                    $search_obj->restsearch($name, $address, $genre, $country);
+                }
+
+                ?>
+
+
+                <h4>Top 9 Cafes on Gourmet</h4><br>
+                <div class="row portfolio-container" data-aos="fade-up">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="assets/img/portfolio/portfolio-1001.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Antique</h4>
+                            <p>548-13 Tsukinokawa, Osaka</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <img src="assets/img/portfolio/portfolio-1002.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Rouge</h4>
+                            <p>377-18 Shiro, Tokyo</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="assets/img/portfolio/portfolio-1003.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>FIESTA</h4>
+                            <p>898-13 Fukakusa, Tokyo</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <img src="assets/img/portfolio/portfolio-1004.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Iris</h4>
+                            <p>427-2 Jinkyu, Tokyo</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <img src="assets/img/portfolio/portfolio-1005.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>BLOOM</h4>
+                            <p>386-11 Omi, Osaka</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="assets/img/portfolio/portfolio-1006.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>cantabile</h4>
+                            <p>548-5 Yoshikura, Osaka</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <img src="assets/img/portfolio/portfolio-1007.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>maroon</h4>
+                            <p>483-14 Sone, Tokyo</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <img src="assets/img/portfolio/portfolio-1008.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Platinum</h4>
+                            <p>104-1 Nonaka, Osaka</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <img src="assets/img/portfolio/portfolio-1009.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Meteor</h4>
+                            <p>554-4 Kaminogo, Tokyo</p>
                         </div>
                     </div>
                 </div>
@@ -136,30 +242,6 @@
 
 
 
-
-
-        <!--<section id="blog" class="blog">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8">
-
-                        <div class="search" data-aos="fade-up">
-
-                            <h3 class="search">Search</h3>
-                            <div class="item search-form">
-                                <form action="">
-                                    <input type="text">
-                                    <button type="submit"><i class="icofont-search"></i></button>
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>-->
     </main>
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 

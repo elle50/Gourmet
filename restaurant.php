@@ -153,7 +153,7 @@ $search_obj = new Search;
                 ?>
 
 
-                <h4>Popular Restaurants on Gourmet</h4><br>
+                <h4>Top 9 Restaurants on Gourmet</h4><br>
                 <div class="row portfolio-container" data-aos="fade-up">
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
