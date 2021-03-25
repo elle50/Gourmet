@@ -145,9 +145,9 @@ $search_obj = new Search;
                     $name = $_POST['name'];
                     $address = $_POST['name'];
                     $genre = $_POST['name'];
-                    $country = $_POST['name'];
-
-                    $search_obj->restsearch($name, $address, $genre, $country);
+                    
+                    $search_obj->cafesearch($name, $address, $genre);
+                  
                 }
 
                 ?>

@@ -1,3 +1,10 @@
+<?php
+
+include './classes/Search.php';
+$search_obj = new Search;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,8 +102,11 @@
                     <ol>
                         <li>
                             <?php
-
                             
+                            include './classes/Displayname.php';
+                            $name_obj = new Displayname;
+                            
+                            $user_obj->display_name($username);
 
                             ?>
                         </li>
@@ -117,9 +127,9 @@
                         <div class="sidebar">
                             <!--<h3 class="sidebar-title">Search</h3>-->
                             <div class="sidebar-item search-form">
-                                <form action="">
-                                    <input type="text">
-                                    <button type="submit"><i class="icofont-search"></i></button>
+                                <form action="" method="POST" name="search">
+                                    <input type="text" name="name" placeholder="keyword">
+                                    <button type="submit" name="search" value="search"><i class="icofont-search"></i></button>
                                 </form>
 
                             </div>
@@ -127,8 +137,24 @@
                     </div>
                 </div>
 
+                <?php
 
-                <h4>Popular Restaurants on Gourmet</h4><br>
+
+                if (isset($_POST['search'])) {
+                    $name = $_POST['name'];
+                    $address = $_POST['name'];
+                    $genre = $_POST['name'];
+                    $country = $_POST['name'];
+                    
+                    $search_obj->restsearch($name, $address, $genre, $country);
+                    $search_obj->cafesearch($name, $address, $genre);
+                  
+                }
+
+                ?>
+
+
+                <h4>Top 9 Restaurants on Gourmet</h4><br>
                 <div class="row portfolio-container" data-aos="fade-up">
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
@@ -215,6 +241,90 @@
                         </div>
                     </div>
 
+                </div><br><br>
+
+                <h4>Top 9 Cafes on Gourmet</h4><br>
+                <div class="row portfolio-container" data-aos="fade-up">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="assets/img/portfolio/portfolio-1001.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>NEON</h4>
+                            <p>547-6 Naka, Osaka</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <img src="assets/img/portfolio/portfolio-1002.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Melty</h4>
+                            <p>126-1 Muraokaku, Tokyo</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="assets/img/portfolio/portfolio-1003.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>heavenly</h4>
+                            <p>752-13 Tabiracho, Tokyo</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <img src="assets/img/portfolio/portfolio-1004.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Amity</h4>
+                            <p>236-5 Kasaricho, Tokyo</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <img src="assets/img/portfolio/portfolio-1005.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>cocoa</h4>
+                            <p>400-11 Senishigawa, Osaka</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="assets/img/portfolio/portfolio-1006.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Dolly</h4>
+                            <p>548-5 Yoshikura, Osaka</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <img src="assets/img/portfolio/portfolio-1007.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>fairy</h4>
+                            <p>218-14 Kotomachi, Tokyo</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <img src="assets/img/portfolio/portfolio-1008.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>CAMOMILE</h4>
+                            <p>750-6 Himebara, Osaka</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <img src="assets/img/portfolio/portfolio-1009.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>biscuit</h4>
+                            <p>258-14 Asahigaoka, Tokyo</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
