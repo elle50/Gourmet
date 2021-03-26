@@ -23,7 +23,8 @@ class Search extends Databases
                 echo "<img src=$rest_image class='img-fluid' alt=''>";
                 echo '<div class="portfolio-info">';
                 echo "<h4>$rest_name</h4>";
-                echo '<p>' . $rest_address . '</p>
+                echo '<p>' . $rest_address . '</p>';
+                echo '<button type="submit" name="reserve" value="reserve"><i class="icofont-search"></i></button>
                             
                         </div>
                     </div>
